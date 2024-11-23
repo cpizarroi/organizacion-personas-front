@@ -1,0 +1,39 @@
+/* home.component.css */
+
+/* Fondo blanco con sombra y bordes redondeados */
+.custom-container {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    max-width: 50%; /* Ajustar el ancho máximo */
+    height: 60vh;  /* Altura del contenedor */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  
+  h1 {
+    color: #343a40;
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+  }
+  
+  /* Botones más pequeños y armónicos */
+  .custom-btn {
+    font-size: 1rem; /* Tamaño de fuente reducido */
+    padding: 10px 15px; /* Ajuste de padding */
+    width: 150px; /* No ocupar todo el ancho */
+    max-width: 300px; /* Ancho máximo fijo */
+    margin: 0 auto; /* Centrar los botones horizontalmente */
+  }
+  
+  .row {
+    justify-content: center;
+    margin-bottom: 10px; /* Añadir espacio entre las filas */
+  }
+  
+  .col-12 {
+    max-width: 100%;
+  }
+  

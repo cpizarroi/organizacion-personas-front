@@ -1,0 +1,10 @@
+.chart-container {
+    display: flex;            /* Usamos Flexbox */
+    justify-content: center;  /* Centra el gráfico horizontalmente */
+    align-items: center;      /* Centra el gráfico verticalmente */
+    position: relative;
+    height: 60vh;             /* Altura del gráfico */
+    width: 80vw;              /* Ancho del gráfico */
+    margin: 0 auto;           /* Centrado en el contenedor principal */
+  }
+  

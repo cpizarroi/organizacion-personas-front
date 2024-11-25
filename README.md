@@ -1,27 +1,51 @@
-# OrganizacionPersonalFront
+# Organización de Personas - Frontend
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.10.
+## Descripción
+El frontend de la aplicación Organización de Personas se ha desarrollado utilizando Angular. Este frontend proporciona una interfaz de usuario interactiva para registrar personas, mostrar estadísticas sobre las áreas de trabajo y ofrecer información sobre el creador de la aplicación. Se conecta con el backend de la aplicación, el cual maneja las tablas `personas` y `areas` en una base de datos MySQL.
 
-## Development server
+## Requisitos Previos
+- Node.js (v20.10)
+- npm (v10.8.2)
+- Angular (v17.3.0)
+- Angular CLI (v17.3.10)
+- MySQL (v8.0)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+## Ejecución Local
+1. Clonar el proyecto:
+    ```sh
+    git clone https://github.com/cpizarroi/organizacion-personas-front.git
+    ```
+2. Ingresar al directorio que se creará:
+    ```sh
+    cd organizacion-personas-front
+    ```
+3. Procurar que el backend se esté ejecutando localmente.
+4. Ejecutar:
+    ```sh
+    npm install
+    ```
+5. Iniciar la aplicación frontend usando:
+    ```sh
+    npm start
+    ```
+    o bien
+    ```sh
+    ng serve -o
+    ```
+6. Se abrirá una ventana de un navegador web en la dirección `http://localhost:4200/`.
 
-## Code scaffolding
+## Pruebas Unitarias
+Las pruebas unitarias se realizan utilizando [Jasmine](https://jasmine.github.io/) y [Karma](https://karma-runner.github.io/).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+### Ejecución de Pruebas
+Para ejecutar las pruebas unitarias, utiliza el siguiente comando:
+    ```
+    ng test
+    ```
 
-## Build
+## Rutas Principales
+- **/home**: Página principal que contiene enlaces a las rutas de registro, resultados y acerca de.
+- **/registro**: Permite registrar a una nueva persona con su nombre, correo electrónico y área de trabajo.
+- **/resultados**: Muestra un gráfico indicando el número de personas por área de trabajo.
+- **/acercade**: Ofrece una breve reseña sobre la persona que creó la aplicación.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.

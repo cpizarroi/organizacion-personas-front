@@ -67,16 +67,28 @@ export class RegisterComponent implements OnInit {
         },
         (error) => {
           console.error('Error al registrar el usuario', error);
-          Swal.fire({
-            title: 'Error',
-            text: 'Hubo un problema al registrar la persona.',
-            icon: 'error',
-            confirmButtonText: 'Aceptar',
-          });
+  
+          // Verificar si el error es de "correo ya registrado"
+          if (error.status === 409 && error.error.message === 'El correo ya está registrado.') {
+            Swal.fire({
+              title: 'Error',
+              text: 'El correo electrónico ya está registrado.',
+              icon: 'error',
+              confirmButtonText: 'Aceptar',
+            });
+          } else {
+            // Error genérico
+            Swal.fire({
+              title: 'Error',
+              text: 'Hubo un problema al registrar la persona.',
+              icon: 'error',
+              confirmButtonText: 'Aceptar',
+            });
+          }
         }
       );
     } else {
       console.log('Por favor completa todos los campos.');
     }
-  }
+  }  
 }  

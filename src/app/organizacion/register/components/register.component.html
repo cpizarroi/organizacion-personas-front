@@ -1,8 +1,11 @@
 <div class="container mt-5 mb-5 pb-5 custom-container">
-  <div class="row justify-content-center ">
+  <!-- Contenedor principal con márgenes y espaciado personalizado -->
+  <div class="row justify-content-center">
     <div class="col-md-8">
+      <!-- Título de la sección -->
       <h2 class="text-center m-5">Registro de personas</h2>
       <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+        <!-- Campo para el nombre -->
         <div class="form-group mb-3">
           <label for="nombre">Nombre <i class="bi bi-person"></i></label>
           <input
@@ -12,10 +15,13 @@
             formControlName="nombre"
             placeholder="Ingresa tu nombre"
           />
+          <!-- Mensaje de error si el nombre no es válido -->
           <div *ngIf="registerForm.get('nombre')?.touched && registerForm.get('nombre')?.invalid" class="text-danger">
             El nombre es requerido.
           </div>
         </div>
+
+        <!-- Campo para el correo electrónico -->
         <div class="form-group mb-3">
           <label for="correo">Correo Electrónico <i class="bi bi-envelope"></i></label>
           <input
@@ -25,10 +31,13 @@
             formControlName="correo"
             placeholder="Ingresa tu correo electrónico"
           />
+          <!-- Mensaje de error si el correo no es válido -->
           <div *ngIf="registerForm.get('correo')?.touched && registerForm.get('correo')?.invalid" class="text-danger">
             Debes ingresar un correo válido.
           </div>
         </div>
+
+        <!-- Campo para seleccionar el área -->
         <div class="form-group mb-3">
           <label for="area">Área <i class="bi bi-diagram-3"></i></label>
           <select
@@ -37,14 +46,18 @@
             formControlName="area"
           >
             <option value="" disabled selected>Seleccione un área</option>
+            <!-- Listado de opciones de áreas dinámicamente -->
             <option *ngFor="let area of areas" [value]="area.id">
               {{ area.nombre }}
             </option>
           </select>
+          <!-- Mensaje de error si no se selecciona un área -->
           <div *ngIf="registerForm.get('area')?.touched && registerForm.get('area')?.invalid" class="text-danger">
             Debes seleccionar un área.
           </div>
         </div>
+
+        <!-- Botones de acción (enviar formulario y volver al inicio) -->
         <div class="d-flex justify-content-between mt-5">
           <button
             type="submit"

@@ -6,33 +6,34 @@ import { RegisterComponent } from './register/components/register.component';
 import { ResultsComponent } from './results/components/results.component';
 import { AboutComponent } from './about/components/about.component';
 
+// Definición de las rutas para los componentes de la aplicación
 const routes: Routes = [
   {
-    path: '',
-    component: LayoutComponent,
+    path: '', // Ruta base
+    component: LayoutComponent, // Componente principal de la aplicación
     children: [
       {
-        path: '',
-        component: HomeComponent
+        path: '', // Ruta para la página de inicio
+        component: HomeComponent 
       },
       {
-        path: 'registro',
-        component: RegisterComponent
+        path: 'registro', // Ruta para la página de registro
+        component: RegisterComponent 
       },
       {
-        path: 'resultados',
-        component: ResultsComponent
+        path: 'resultados', // Ruta para la página de resultados
+        component: ResultsComponent 
       },
       {
-        path: 'acercade',
-        component: AboutComponent
+        path: 'acercade', // Ruta para la página "Acerca de"
+        component: AboutComponent 
       },
     ]
   }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
-  exports: [RouterModule]
+  imports: [RouterModule.forChild(routes)], // Importa el RouterModule con las rutas definidas
+  exports: [RouterModule] // Exporta RouterModule para que esté disponible en otros módulos
 })
-export class OrganizacionRoutingModule { }
+export class OrganizacionRoutingModule { } // Módulo de rutas para la sección de organización

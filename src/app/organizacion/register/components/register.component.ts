@@ -12,64 +12,69 @@ import Swal from 'sweetalert2';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  registerForm: FormGroup;
-  areas: Areas[] = []; // Lista de áreas
+  registerForm: FormGroup; // Formulario reactivo
+  areas: Areas[] = []; // Lista para almacenar las áreas disponibles
 
   constructor(
-    private router: Router,
-    private registerService: RegisterService,
-    private areaService: AreaService, // Servicio de áreas
-    private fb: FormBuilder
+    private router: Router, // Router para navegar entre páginas
+    private registerService: RegisterService, // Servicio para registrar usuario
+    private areaService: AreaService, // Servicio para obtener las áreas
+    private fb: FormBuilder // FormBuilder para crear el formulario reactivo
   ) {
+    // Inicialización del formulario con validaciones
     this.registerForm = this.fb.group({
-      nombre: ['', Validators.required],
-      correo: ['', [Validators.required, Validators.email]],
-      area: ['', Validators.required]
+      nombre: ['', Validators.required], // El nombre es obligatorio
+      correo: ['', [Validators.required, Validators.email]], // El correo es obligatorio y debe ser un email válido
+      area: ['', Validators.required] // El área es obligatoria
     });
   }
 
   ngOnInit(): void {
-    this.loadAreas(); // Cargar áreas al iniciar
+    this.loadAreas(); // Cargar las áreas disponibles al iniciar el componente
   }
 
   loadAreas(): void {
+    // Llamada al servicio para obtener las áreas
     this.areaService.getAreas().subscribe(
       (data: Areas[]) => {
-        this.areas = data;
+        this.areas = data; // Asignar las áreas obtenidas a la lista
       },
       (error: any) => {
+        // Manejar errores si no se puede cargar las áreas
         console.error('Error al cargar las áreas', error);
       }
     );
   }
 
   navigateToHome(): void {
+    // Navegar al componente Home
     this.router.navigate(['/home']);
   }
 
   onSubmit(): void {
+    // Verificar si el formulario es válido antes de enviar
     if (this.registerForm.valid) {
-      console.log(this.registerForm.value); // Para depuración
+      // Llamada al servicio para registrar el usuario
       this.registerService.registerUser(this.registerForm.value).subscribe(
         (response) => {
-          console.log('Usuario registrado con éxito', response);
-  
-          // Mostrar el modal de éxito usando SweetAlert2
+          // Mostrar un mensaje de éxito con SweetAlert2
           Swal.fire({
             title: '¡Éxito!',
             text: 'Persona registrada con éxito.',
             icon: 'success',
             confirmButtonText: 'Aceptar',
           }).then(() => {
-            // Redirige al home después de que se cierre el modal
+            // Redirigir al home después de que se cierre el modal
             this.router.navigate(['/home']);
           });
         },
         (error) => {
+          // Manejar errores de registro de usuario
           console.error('Error al registrar el usuario', error);
-  
+
           // Verificar si el error es de "correo ya registrado"
           if (error.status === 409 && error.error.message === 'El correo ya está registrado.') {
+            // Mostrar mensaje de error para correo ya registrado
             Swal.fire({
               title: 'Error',
               text: 'El correo electrónico ya está registrado.',
@@ -77,7 +82,7 @@ export class RegisterComponent implements OnInit {
               confirmButtonText: 'Aceptar',
             });
           } else {
-            // Error genérico
+            // Error genérico si no es correo duplicado
             Swal.fire({
               title: 'Error',
               text: 'Hubo un problema al registrar la persona.',
@@ -88,7 +93,13 @@ export class RegisterComponent implements OnInit {
         }
       );
     } else {
-      console.log('Por favor completa todos los campos.');
+      // Si el formulario no es válido, mostrar mensaje en consola
+      Swal.fire({
+        title: 'Error',
+        text: 'Por favor completa todos los campos.',
+        icon: 'error',
+        confirmButtonText: 'Aceptar',
+      });
     }
   }  
-}  
+}

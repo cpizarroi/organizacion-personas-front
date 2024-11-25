@@ -1,39 +1,36 @@
-/* home.component.css */
-
-/* Fondo blanco con sombra y bordes redondeados */
+/* Contenedor con fondo, bordes redondeados y sombra */
 .custom-container {
-    background-color: #ffffff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    max-width: 50%; /* Ajustar el ancho máximo */
-    height: 61vh;  /* Altura del contenedor */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
-  
-  h1 {
-    color: #343a40;
-    margin-bottom: 30px;
-    font-size: 2.5rem;
-  }
-  
-  /* Botones más pequeños y armónicos */
-  .custom-btn {
-    font-size: 1rem; /* Tamaño de fuente reducido */
-    padding: 10px 15px; /* Ajuste de padding */
-    width: 150px; /* No ocupar todo el ancho */
-    max-width: 300px; /* Ancho máximo fijo */
-    margin: 0 auto; /* Centrar los botones horizontalmente */
-  }
-  
-  .row {
-    justify-content: center;
-    margin-bottom: 10px; /* Añadir espacio entre las filas */
-  }
-  
-  .col-12 {
-    max-width: 100%;
-  }
-  
+  background-color: #ffffff; /* Fondo blanco */
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 20px; /* Espaciado interno */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  max-width: 50%; /* Ancho máximo */
+  height: 61vh; /* Altura del contenedor */
+  display: flex; /* Flexbox */
+  flex-direction: column; /* Alineación en columna */
+  justify-content: center; /* Centrado vertical */
+}
+
+h1 {
+  color: #343a40; /* Color del texto */
+  margin-bottom: 30px; /* Espacio inferior */
+  font-size: 2.5rem; /* Tamaño de fuente */
+}
+
+/* Estilo para botones más pequeños */
+.custom-btn {
+  font-size: 1rem; /* Tamaño de fuente */
+  padding: 10px 15px; /* Ajuste de padding */
+  width: 150px; /* Ancho fijo */
+  max-width: 300px; /* Ancho máximo */
+  margin: 0 auto; /* Centrado horizontal */
+}
+
+.row {
+  justify-content: center; /* Centrar contenido */
+  margin-bottom: 10px; /* Espacio inferior */
+}
+
+.col-12 {
+  max-width: 100%; /* Ancho completo */
+}

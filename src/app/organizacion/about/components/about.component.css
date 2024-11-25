@@ -1,16 +1,18 @@
+/* Estilos para el contenedor con borde */
 .border-container {
-    border: 2px solid #ccc;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    background-color: #ffffff;
-    max-width: 70%; 
-    margin: auto;
-    min-height: calc(100vh - 100px);
+    border: 2px solid #ccc; /* Borde */
+    padding: 20px; /* Espaciado interno */
+    border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    background-color: #ffffff; /* Fondo blanco */
+    max-width: 70%; /* Ancho máximo */
+    margin: auto; /* Centrado */
+    min-height: calc(100vh - 100px); /* Altura mínima */
 }
 
+/* Estilos para la imagen personalizada */
 .custom-img {
-    max-width: 250px; 
-    width: 100%;
-    height: auto;
+    max-width: 250px; /* Ancho máximo */
+    width: 100%; /* Ancho completo */
+    height: auto; /* Mantiene proporción */
 }

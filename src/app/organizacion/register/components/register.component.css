@@ -1,39 +1,45 @@
 /* Estilos personalizados para RegisterComponent */
+
+/* Contenedor principal con fondo blanco, bordes redondeados, y sombra */
 .custom-container {
   background-color: #ffffff;
-  border-radius: 10px;
-  padding: 30px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 10px; /* Bordes redondeados */
+  padding: 30px; /* Espaciado interno */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
   max-width: 800px; /* Ajustar el ancho máximo del contenedor */
   margin: auto; /* Centrar el contenedor */
-  height: 590px;
+  height: 590px; /* Altura fija */
 }
 
 h2 {
-  color: #343a40;
-  margin-bottom: 20px;
-  font-size: 2rem;
+  color: #343a40; /* Color de texto */
+  margin-bottom: 20px; /* Espacio debajo del título */
+  font-size: 2rem; /* Tamaño de fuente del título */
 }
 
+/* Estilo para los campos de formulario */
 .form-control {
-  padding: 10px;
-  font-size: 1rem;
+  padding: 10px; /* Espaciado interno */
+  font-size: 1rem; /* Tamaño de fuente */
 }
 
+/* Estilo para los botones */
 .btn {
   font-size: 1rem; /* Reducir el tamaño de fuente de los botones */
   padding: 8px 16px; /* Ajustar el padding */
 }
 
+/* Utiliza Flexbox para distribuir el contenido */
 .d-flex {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Espacio entre los elementos */
 }
 
+/* Márgenes superior e inferior */
 .mt-5 {
-  margin-top: 3rem;
+  margin-top: 3rem; /* Espacio en la parte superior */
 }
 
 .mb-5 {
-  margin-bottom: 3rem;
+  margin-bottom: 3rem; /* Espacio en la parte inferior */
 }

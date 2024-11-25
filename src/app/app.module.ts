@@ -7,16 +7,16 @@ import { OrganizacionModule } from './organizacion/organizacion.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent,  // Declaración del componente principal de la aplicación
   ],
   imports: [
-    BrowserModule,
-    AppRoutingModule,
-    CommonModule,
-    OrganizacionModule
+    BrowserModule,  // Necesario para ejecutar la aplicación en el navegador
+    AppRoutingModule,  // Configuración de las rutas de la aplicación
+    CommonModule,  // Módulo común para usar funcionalidades generales
+    OrganizacionModule,  // Módulo que agrupa componentes relacionados con la organización
   ],
   exports: [],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [],  // Servicios que se proporcionarán a la aplicación
+  bootstrap: [AppComponent]  // Componente raíz que se cargará primero
 })
 export class AppModule { }

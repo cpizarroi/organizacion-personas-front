@@ -1,4 +1,5 @@
 // src/app/organizacion/organizacion.module.ts
+
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
@@ -14,21 +15,23 @@ import { AreaService } from './register/services/areas.service';
 
 @NgModule({
   declarations: [
-    AboutComponent,
-    HomeComponent,
-    RegisterComponent,
-    ResultsComponent
+    AboutComponent,  // Componente para la sección "Acerca de"
+    HomeComponent,   // Componente para la página de inicio
+    RegisterComponent,  // Componente para el registro de usuarios
+    ResultsComponent   // Componente para ver los resultados
   ],
   imports: [
-    CommonModule,
-    HttpClientModule,
-    ReactiveFormsModule,
-    FormsModule,
-    SharedModule,
-    RouterModule,
-    OrganizacionRoutingModule
+    CommonModule,  // Módulo común que contiene directivas y tuberías comunes
+    HttpClientModule,  // Módulo para hacer peticiones HTTP
+    ReactiveFormsModule,  // Módulo para trabajar con formularios reactivos
+    FormsModule,  // Módulo para trabajar con formularios template-driven
+    SharedModule,  // Módulo compartido con componentes y servicios comunes
+    RouterModule,  // Módulo para manejar rutas
+    OrganizacionRoutingModule  // Módulo de rutas específicas de la organización
   ],
-  providers: [AreaService],
-  exports: []
+  providers: [
+    AreaService  // Servicio para gestionar las áreas
+  ],
+  exports: []  // No se exportan componentes desde este módulo
 })
 export class OrganizacionModule { }
